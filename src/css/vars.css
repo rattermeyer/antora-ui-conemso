@@ -17,11 +17,23 @@
   --color-jet-70: #222;
   --color-jet-80: #191919;
   --color-black: #000;
+  /* conemso brand palette */
+  --color-conemso-darkest: #07424c;
+  --color-conemso-dark: #0d6b7a;
+  --color-conemso-base: #108193;
+  --color-conemso-mid: #3ea0ad;
+  --color-conemso-light: #8ecfd7;
+  --color-conemso-lighter: #d6eef2;
+  --color-conemso-lightest: #edf6f8;
   /* fonts */
-  --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
-  --body-font-size: 1.0625em; /* 17px */
-  --body-font-size--desktop: 1.125em; /* 18px */
-  --body-font-size--print: 0.9375em; /* 15px */
+  --rem-base: 18;
+  /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
+  --body-font-size: 1.0625em;
+  /* 17px */
+  --body-font-size--desktop: 1.125em;
+  /* 18px */
+  --body-font-size--print: 0.9375em;
+  /* 15px */
   --body-line-height: 1.15;
   --body-font-color: var(--color-jet-70);
   --body-font-family: "Roboto", sans-serif;
@@ -30,15 +42,15 @@
   --monospace-font-weight-bold: 600;
   /* base */
   --body-background: var(--color-white);
-  --panel-background: var(--color-smoke-30);
-  --panel-border-color: var(--color-smoke-90);
-  --scrollbar-track-color: var(--color-smoke-30);
-  --scrollbar-thumb-color: var(--color-gray-10);
-  --scrollbar_hover-thumb-color: var(--color-gray-30);
+  --panel-background: var(--color-conemso-lightest);
+  --panel-border-color: var(--color-conemso-lighter);
+  --scrollbar-track-color: var(--color-conemso-lightest);
+  --scrollbar-thumb-color: var(--color-conemso-light);
+  --scrollbar_hover-thumb-color: var(--color-conemso-mid);
   /* navbar */
-  --navbar-background: var(--color-jet-80);
+  --navbar-background: var(--color-conemso-darkest);
   --navbar-font-color: var(--color-white);
-  --navbar_hover-background: var(--color-black);
+  --navbar_hover-background: var(--color-conemso-dark);
   --navbar-button-background: var(--color-white);
   --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
@@ -48,25 +60,25 @@
   --navbar-menu_hover-background: var(--color-smoke-50);
   /* nav */
   --nav-background: var(--panel-background);
-  --nav-border-color: var(--color-gray-10);
+  --nav-border-color: var(--color-conemso-light);
   --nav-line-height: 1.35;
-  --nav-heading-font-color: var(--color-jet-30);
+  --nav-heading-font-color: var(--color-conemso-darkest);
   --nav-muted-color: var(--color-gray-70);
-  --nav-panel-divider-color: var(--color-smoke-90);
-  --nav-secondary-background: var(--color-smoke-70);
+  --nav-panel-divider-color: var(--color-conemso-lighter);
+  --nav-secondary-background: var(--color-conemso-lighter);
   /* toolbar */
   --toolbar-background: var(--panel-background);
   --toolbar-border-color: var(--panel-border-color);
   --toolbar-font-color: var(--color-gray-70);
   --toolbar-muted-color: var(--color-gray-40);
-  --page-version-menu-background: var(--color-smoke-70);
+  --page-version-menu-background: var(--color-conemso-lighter);
   --page-version-missing-font-color: var(--color-gray-40);
   /* admonitions */
   --caution-color: #a0439c;
   --caution-on-color: var(--color-white);
   --important-color: #d32f2f;
   --important-on-color: var(--color-white);
-  --note-color: #217ee7;
+  --note-color: var(--color-conemso-base);
   --note-on-color: var(--color-white);
   --tip-color: #41af46;
   --tip-on-color: var(--color-white);
@@ -79,16 +91,16 @@
   --doc-line-height: 1.6;
   --doc-margin: 0 auto;
   --doc-margin--desktop: 0 2rem;
-  --heading-font-color: var(--color-jet-80);
+  --heading-font-color: var(--color-conemso-darkest);
   --heading-font-weight: normal;
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--panel-border-color);
-  --link-font-color: #1565c0;
-  --link_hover-font-color: #104d92;
+  --link-font-color: var(--color-conemso-base);
+  --link_hover-font-color: var(--color-conemso-dark);
   --link_unresolved-font-color: var(--important-color);
-  --abstract-background: var(--color-smoke-70);
+  --abstract-background: var(--color-conemso-lighter);
   --abstract-font-color: var(--color-jet-20);
-  --abstract-border-color: var(--panel-border-color);
+  --abstract-border-color: var(--color-conemso-base);
   --admonition-background: var(--panel-background);
   --admonition-label-font-weight: var(--body-font-weight-bold);
   --caption-font-color: var(--color-gray-70);
@@ -97,30 +109,30 @@
   --code-background: var(--panel-background);
   --code-font-color: var(--body-font-color);
   --example-background: var(--color-white);
-  --example-border-color: var(--color-gray-70);
+  --example-border-color: var(--color-conemso-mid);
   --kbd-background: var(--panel-background);
   --kbd-border-color: var(--color-gray-10);
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: var(--color-gray-50);
   --quote-background: var(--panel-background);
-  --quote-border-color: var(--color-gray-70);
+  --quote-border-color: var(--color-conemso-mid);
   --quote-font-color: var(--color-gray-70);
   --quote-attribution-font-color: var(--color-gray-40);
-  --sidebar-background: var(--color-smoke-90);
+  --sidebar-background: var(--color-conemso-lighter);
   --table-border-color: var(--panel-border-color);
   --table-stripe-background: var(--panel-background);
-  --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);
+  --table-footer-background: linear-gradient(to bottom, var(--color-conemso-lighter) 0%, var(--color-white) 100%);
   /* toc */
   --toc-font-color: var(--nav-muted-color);
   --toc-heading-font-color: var(--doc-font-color);
-  --toc-border-color: var(--panel-border-color);
+  --toc-border-color: var(--color-conemso-light);
   --toc-line-height: 1.2;
   /* footer */
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-smoke-90);
-  --footer-font-color: var(--color-gray-70);
-  --footer-link-font-color: var(--color-jet-80);
+  --footer-background: var(--color-conemso-lighter);
+  --footer-font-color: var(--color-jet-50);
+  --footer-link-font-color: var(--color-conemso-darkest);
   /* dimensions and positioning */
   --navbar-height: calc(63 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
@@ -143,4 +155,58 @@
   --z-index-toolbar: 2;
   --z-index-page-version-menu: 3;
   --z-index-navbar: 4;
+}
+
+/* dark theme */
+html.dark-theme {
+  --body-background: #12191c;
+  --panel-background: #1a2227;
+  --panel-border-color: #263238;
+  --scrollbar-track-color: #1a2227;
+  --scrollbar-thumb-color: #3ea0ad;
+  --scrollbar_hover-thumb-color: #8ecfd7;
+  --navbar-background: #0a1619;
+  --navbar-font-color: #c4c9cc;
+  --navbar_hover-background: #12191c;
+  --body-font-color: #c4c9cc;
+  --heading-font-color: #8ecfd7;
+  --link-font-color: #3ea0ad;
+  --link_hover-font-color: #8ecfd7;
+  --nav-background: #12191c;
+  --nav-border-color: #263238;
+  --nav-heading-font-color: #8ecfd7;
+  --nav-muted-color: #7a8288;
+  --nav-panel-divider-color: #263238;
+  --nav-secondary-background: #1a2227;
+  --toolbar-background: #12191c;
+  --toolbar-border-color: #263238;
+  --toolbar-font-color: #7a8288;
+  --page-version-menu-background: #1a2227;
+  --doc-font-color: #c4c9cc;
+  --section-divider-color: #263238;
+  --abstract-background: #1a2227;
+  --abstract-font-color: #a0a8ac;
+  --abstract-border-color: #3ea0ad;
+  --code-background: #1a2227;
+  --code-font-color: #c4c9cc;
+  --example-background: #1a2227;
+  --example-border-color: #3ea0ad;
+  --kbd-background: #1a2227;
+  --kbd-border-color: #3ea0ad;
+  --pre-background: #1a2227;
+  --pre-border-color: #263238;
+  --pre-annotation-font-color: #7a8288;
+  --quote-background: #1a2227;
+  --quote-border-color: #3ea0ad;
+  --quote-font-color: #7a8288;
+  --sidebar-background: #1a2227;
+  --table-border-color: #263238;
+  --table-stripe-background: #1a2227;
+  --table-footer-background: linear-gradient(to bottom, #1a2227 0%, #12191c 100%);
+  --toc-font-color: #7a8288;
+  --toc-heading-font-color: #c4c9cc;
+  --toc-border-color: #3ea0ad;
+  --footer-background: #0f1619;
+  --footer-font-color: #7a8288;
+  --footer-link-font-color: #8ecfd7;
 }

@@ -666,6 +666,10 @@
 .doc .imageblock .title,
 .doc .literalblock .title,
 .doc .listingblock .title,
+.doc .openblock {
+  margin-top: 1rem;
+}
+
 .doc .openblock .title,
 .doc .videoblock .title,
 .doc table.tableblock caption {
