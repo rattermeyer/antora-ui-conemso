@@ -46,6 +46,12 @@ All key surface pairs pass AA or better:
   - Borders, dividers, TOC: conemso light/mid tones
 - Added full `html.dark-theme` block with 43 dark-mode variable overrides
 
+### `src/partials/head-prelude.hbs` — Head prelude
+
+- **Added** blocking inline `<script>` before CSS loads that restores the persisted theme on page navigation
+- Reads `localStorage` for saved theme preference, falls back to `prefers-color-scheme: dark` media query
+- Sets `dark-theme` class and `data-theme="dark"` attribute on `<html>` synchronously to prevent flash of wrong theme (FOUC)
+
 ### `src/partials/header-content.hbs` — Header template
 
 - **Removed** placeholder navigation items (Home, Products, Services, Download)
@@ -121,6 +127,7 @@ cd /home/richard/devel/playground/antora-tracer-demo && npx antora --fetch antor
 | `src/css/header.css` | Modified | Logo, search, theme toggle |
 | `src/css/highlight.css` | Modified | Harmonized syntax colors |
 | `src/css/doc.css` | Modified | Openblock top margin |
+| `src/partials/head-prelude.hbs` | Modified | Theme restoration on page load (FOUC fix) |
 | `src/partials/header-content.hbs` | Modified | Logo + toggle, stripped nav |
 | `src/js/07-switch-theme.js` | **New** | Theme toggle JavaScript |
 | `src/img/logo_icononly_transparent.png` | **New** | Transparent icon logo |
