@@ -3,3 +3,12 @@
 {{#if env.SITE_SEARCH_PROVIDER}}
 {{> search-scripts}}
 {{/if}}
+{{#if (or
+  (and (eq site.keys.annotatejs 'opt-in') page.attributes.page-annotatejs)
+  (and (eq site.keys.annotatejs 'opt-out') (ne page.attributes.page-annotatejs 'false'))
+)}}
+<script>
+window.AnnotateConfig = { {{~#if page.attributes.page-annotatejs-project}} project: '{{page.attributes.page-annotatejs-project}}'{{else if site.keys.annotatejsProject}} project: '{{site.keys.annotatejsProject}}'{{/if}}{{~#if site.keys.annotatejsAccent}}, accent: '{{site.keys.annotatejsAccent}}'{{/if}}{{~#if site.keys.annotatejsTheme}}, theme: '{{site.keys.annotatejsTheme}}'{{/if}}{{~#if site.keys.annotatejsPosition}}, position: '{{site.keys.annotatejsPosition}}'{{/if}}{{~#if site.keys.annotatejsBlocks}}, blocks: '{{site.keys.annotatejsBlocks}}'{{/if}}{{~#if page.attributes.page-annotatejs-start-open}}, startOpen: true{{else if site.keys.annotatejsStartOpen}}, startOpen: true{{/if}}{{~#if page.attributes.page-annotatejs-note}}, note: '{{page.attributes.page-annotatejs-note}}'{{else if site.keys.annotatejsNote}}, note: '{{site.keys.annotatejsNote}}'{{/if}}{{~#if site.keys.annotatejsShareEmail}}, shareEmail: '{{site.keys.annotatejsShareEmail}}'{{/if}} };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@reviewjs/annotate/annotate.js" defer></script>
+{{/if}}

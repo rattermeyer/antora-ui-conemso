@@ -51,6 +51,132 @@ If the URL were to be unique, this setting would not be required.
 
 Read on to learn how to customize the default UI for your own documentation.
 
+== annotate.js Integration
+
+This UI includes optional support for https://reviewjs.github.io/annotate/[annotate.js], a drop-in visual review and annotation layer.
+It lets visitors highlight text, draw rectangles and circles, drop pins, sketch freehand, and leave threaded comments — directly on top of your live documentation pages.
+All data stays in the reviewer's browser and can be exported as a single JSON file.
+
+=== Enabling annotate.js
+
+annotate.js is controlled by a site-wide mode, with per-page overrides.
+Configure it in your Antora playbook under `asciidoc.attributes`:
+
+[source,yaml]
+----
+asciidoc:
+  attributes:
+    annotatejs: opt-in
+----
+
+.Supported modes
+[cols="1,4"]
+|===
+| `off` (default)
+| annotate.js is never injected, regardless of page attributes.
+
+| `opt-in`
+| Only pages that set `:page-annotatejs: true` get annotate.js.
+
+| `opt-out`
+| All pages get annotate.js by default.
+Pages can opt out with `:page-annotatejs: false`.
+|===
+
+=== Site-wide Configuration
+
+All options are optional. Set them in the playbook under `asciidoc.attributes`.
+When writing playbook keys, use kebab-case (e.g. `annotatejs-project`); Antora normalizes them to camelCase in the UI model automatically.
+
+[cols="1,1,3"]
+|===
+| Playbook key | Default | Description
+
+| `annotatejs-project`
+| _none_
+| Namespace for stored comments. Use this to keep separate sites/projects apart.
+
+| `annotatejs-accent`
+| _none_
+| Brand color for primary buttons and the active tool (e.g. `#6d28d9`).
+
+| `annotatejs-theme`
+| `auto`
+| `light`, `dark`, or `auto` (detects the page background automatically).
+
+| `annotatejs-position`
+| `bottom-right`
+| Where the toolbar button appears: `bottom-right` or `bottom-left`.
+
+| `annotatejs-blocks`
+| _sensible default_
+| CSS selector for section-level comment targets. For docs, a good value is: `.doc h2,.doc h3,.doc h4`.
+
+| `annotatejs-note`
+| _none_
+| Author guidance shown to reviewers — what should they focus on?
+
+| `annotatejs-share-email`
+| _none_
+| Email address or link where reviewers can send their feedback. Adds a Share button.
+
+| `annotatejs-start-open`
+| `false`
+| Set to `true` to show the full toolbar immediately instead of a collapsed button.
+|===
+
+=== Per-page Overrides
+
+Set these AsciiDoc attributes in the page header to override site-wide defaults:
+
+[source,asciidoc]
+----
+= My Page Title
+:page-annotatejs: true
+:page-annotatejs-note: Check the API changes on this page.
+:page-annotatejs-start-open: true
+----
+
+[cols="1,3"]
+|===
+| Page attribute | Overrides
+
+| `:page-annotatejs:`
+| Enables (`true`) or disables (`false`) annotate.js for this page.
+
+| `:page-annotatejs-project:`
+| Overrides `annotatejs-project` for this page.
+
+| `:page-annotatejs-note:`
+| Overrides `annotatejs-note` for this page.
+
+| `:page-annotatejs-start-open:`
+| Overrides `annotatejs-start-open` for this page.
+|===
+
+=== Example: Review-ready Documentation
+
+[source,yaml]
+----
+asciidoc:
+  attributes:
+    annotatejs: opt-out
+    annotatejs-project: My Product Docs
+    annotatejs-accent: '#6d28d9'
+    annotatejs-theme: auto
+    annotatejs-blocks: '.doc h2,.doc h3,.doc h4'
+    annotatejs-note: 'Help us improve — highlight errors or unclear sections.'
+    annotatejs-share-email: docs-team@example.com
+----
+
+Then on specific pages that don't need reviews:
+
+[source,asciidoc]
+----
+= Internal Draft
+:page-annotatejs: false
+----
+
 == Development Quickstart
 
 This section offers a basic tutorial to teach you how to set up the default UI project, preview it locally, and bundle it for use with Antora.

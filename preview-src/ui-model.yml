@@ -3,6 +3,13 @@ site:
   url: http://localhost:5252
   title: Antora Tracer
   homeUrl: &home_url /xyz/5.2/index.html
+  keys:
+    annotatejs: opt-out
+    annotatejsProject: Antora Preview
+    annotatejsAccent: '#6d28d9'
+    annotatejsTheme: auto
+    annotatejsBlocks: '.doc h2,.doc h3,.doc h4'
+    annotatejsNote: 'Try annotating this page! Select text, draw a rectangle, or drop a pin.'
   components:
   - name: abc
     title: Project ABC
