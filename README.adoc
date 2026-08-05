@@ -60,12 +60,12 @@ All data stays in the reviewer's browser and can be exported as a single JSON fi
 === Enabling annotate.js
 
 annotate.js is controlled by a site-wide mode, with per-page overrides.
-Configure it in your Antora playbook under `asciidoc.attributes`:
+Configure it in your Antora playbook under `site.keys`:
 
 [source,yaml]
 ----
-asciidoc:
-  attributes:
+site:
+  keys:
     annotatejs: opt-in
 ----
 
@@ -85,7 +85,7 @@ Pages can opt out with `:page-annotatejs: false`.
 
 === Site-wide Configuration
 
-All options are optional. Set them in the playbook under `asciidoc.attributes`.
+All options are optional. Set them in the playbook under `site.keys`.
 When writing playbook keys, use kebab-case (e.g. `annotatejs-project`); Antora normalizes them to camelCase in the UI model automatically.
 
 [cols="1,1,3"]
@@ -162,8 +162,8 @@ Set these AsciiDoc attributes in the page header to override site-wide defaults:
 
 [source,yaml]
 ----
-asciidoc:
-  attributes:
+site:
+  keys:
     annotatejs: opt-out
     annotatejs-project: My Product Docs
     annotatejs-accent: '#6d28d9'
