@@ -123,6 +123,10 @@ When writing playbook keys, use kebab-case (e.g. `annotatejs-project`); Antora n
 | `annotatejs-start-open`
 | `false`
 | Set to `true` to show the full toolbar immediately instead of a collapsed button.
+
+| `annotatejs-self-hosted`
+| `true`
+| When `true` (the default), annotate.js is served from the UI bundle itself. Set to `false` to load from the jsDelivr CDN instead.
 |===
 
 === Per-page Overrides
