@@ -15,6 +15,20 @@
     margin: var(--doc-margin--desktop);
     max-width: var(--doc-max-width--desktop);
     min-width: 0;
+    transition: max-width 0.3s ease;
+  }
+}
+
+/* reclaim the collapsed TOC gutter so the article widens (see js/10-toc-collapse.js) */
+@media screen and (min-width: 1024px) {
+  body.toc-collapsed .doc {
+    max-width: calc(var(--doc-max-width--desktop) + var(--toc-width) - 50px);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  body.toc-collapsed .doc {
+    max-width: calc(var(--doc-max-width--desktop) + var(--toc-width--widescreen) - 50px);
   }
 }
 

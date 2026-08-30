@@ -51,6 +51,14 @@ If the URL were to be unique, this setting would not be required.
 
 Read on to learn how to customize the default UI for your own documentation.
 
+== Customizations
+
+This fork widens the left navigation (300px -> 360px) and the right table of contents (198px -> 265px, widescreen 252px -> 474px), and adds a collapsible sidebar TOC. These changes follow the https://github.com/circleci/circleci-docs/tree/main/ui[CircleCI docs UI].
+
+* Left nav width: `--nav-width` in `src/css/vars.css`.
+* TOC width: `--toc-width` / `--toc-width--widescreen` in `src/css/vars.css`; the widescreen TOC breakpoint moved from `1216px` to `1600px` in `src/css/main.css` to match its wider column.
+* Collapsible TOC: `src/js/10-toc-collapse.js`, the `.toc-collapse-btn` / `.collapsed` rules in `src/css/toc.css`, and the article reflow in `src/css/doc.css`.
+
 == annotate.js Integration
 
 This UI includes optional support for https://reviewjs.github.io/annotate/[annotate.js], a drop-in visual review and annotation layer.
