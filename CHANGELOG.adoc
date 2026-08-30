@@ -1,0 +1,30 @@
+= Changelog
+
+This file documents the conemso-specific changes on top of the upstream https://gitlab.com/antora/antora-ui-default[Antora Default UI].
+Upstream releases are tagged `v1.0.0` through `v1.1.3`; the fork point is upstream commit `0e38223` (2026-07-16).
+
+== Unreleased (2026-08-30)
+
+=== Added
+* Collapsible sidebar TOC with an expand/collapse button (`src/js/10-toc-collapse.js`).
+* "Copy versioned URL" button in the page toolbar; copies the canonical URL plus the current hash to the clipboard (hidden on CI).
+* External links in the article open in a new tab.
+
+=== Changed
+* Left nav width 300px → 360px.
+* Right TOC width 198px → 265px; widescreen TOC 252px → 474px with its breakpoint moved from 1216px to 1600px.
+
+== Initial customization (2026-08-01 – 2026-08-05)
+
+=== Added
+* conemso brand theme: color palette, header, and logos.
+* Dark theme with a toggle (`src/js/07-switch-theme.js`) and theme restoration on page load.
+* annotate.js review/annotation integration with site-wide and per-page config, self-hosted by default.
+
+=== Changed
+* Article max-width on desktop 828px → 852px.
+* Left nav 270px → 300px; right TOC 162px → 198px (216px → 252px widescreen).
+* Tightened nav/TOC indentation and doc margins to reduce heading wrapping.
+
+=== Fixed
+* Theme restoration on page load.
