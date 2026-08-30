@@ -6,4 +6,10 @@
 {{> breadcrumbs}}
 {{> page-versions}}
 {{> edit-this-page}}
+  {{#if (and page.canonicalUrl (not env.CI))}}
+  <button id="copy-url" class="copy-url-button" title="Copy versioned URL">
+    <svg class="copy-icon" width="16" height="16"><use href="{{{uiRootPath}}}/img/octicons-16.svg#icon-clippy"/></svg>
+    <svg class="copy-check-icon" width="16" height="16" viewBox="0 0 16 16" style="display:none"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z"/></svg>
+  </button>
+  {{/if}}
 </div>

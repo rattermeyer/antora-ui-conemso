@@ -1,5 +1,6 @@
     {{#with page.canonicalUrl}}
     <link rel="canonical" href="{{{this}}}">
+    <meta name="canonical-url" content="{{{this}}}">
     {{/with}}
     {{#unless (eq page.attributes.pagination undefined)}}
     {{#with page.previous}}

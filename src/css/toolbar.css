@@ -66,3 +66,28 @@
 .toolbar .edit-this-page a {
   color: var(--toolbar-muted-color);
 }
+
+.copy-url-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  margin-left: auto;
+  padding: 0 0.5rem;
+  color: var(--toolbar-muted-color);
+}
+
+.copy-url-button:hover {
+  color: var(--toolbar-font-color);
+}
+
+.copy-url-button .copy-icon,
+.copy-url-button .copy-check-icon {
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 1024px) {
+  .copy-url-button {
+    display: block;
+  }
+}
