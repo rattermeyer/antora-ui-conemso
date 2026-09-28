@@ -696,6 +696,12 @@
   padding-bottom: 0.075rem;
 }
 
+.doc .openblock.tracer > .title {
+  color: var(--doc-font-color);
+  font-style: italic;
+  font-weight: var(--body-font-weight-bold);
+}
+
 .doc table.tableblock caption {
   text-align: left;
 }
