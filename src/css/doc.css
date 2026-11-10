@@ -719,12 +719,12 @@
 .doc .openblock.tracer-status-deprecated > .title::after,
 .doc .openblock.tracer-status-superseded > .title::after {
   font-family: "DejaVu Sans", "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", "Noto Sans Symbols", sans-serif;
-  font-size: calc(14 / var(--rem-base) * 1rem);
+  font-size: calc(24 / var(--rem-base) * 1rem);
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-  margin-left: 0.4rem;
-  vertical-align: -0.05em;
+  margin-left: 0.45rem;
+  vertical-align: -0.12em;
 }
 
 .doc .openblock.tracer-status-draft > .title::after {
