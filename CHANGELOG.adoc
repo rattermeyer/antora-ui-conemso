@@ -6,7 +6,7 @@ Upstream releases are tagged `v1.0.0` through `v1.1.3`; the fork point is upstre
 == Unreleased (2026-08-30)
 
 === Added
-* Status glyphs on traceable item titles. An item whose `status` attribute is `draft`, `review`, `approved`, `deprecated`, or `superseded` gets a small symbol after its title, driven by the `tracer-status-<value>` class the Antora Tracer extension emits: `✎` draft, `↻` review, `✓` approved, `⚠` deprecated, `⊘` superseded. An unlisted status renders no glyph. The theme's Roboto subsets carry no symbol glyphs, so these rules name symbol-capable system fonts explicitly (`DejaVu Sans`, `Segoe UI Symbol`, `Apple Symbols`, Noto Sans Symbols) to avoid a fallback that renders tofu.
+* Status glyphs on traceable item titles. An item whose `status` attribute is `draft`, `review`, `approved`, `deprecated`, or `superseded` gets a symbol after its title, driven by the `tracer-status-<value>` class the Antora Tracer extension emits: `✎` draft, `↻` review, `✓` approved, `⚠` deprecated, `⊘` superseded. An unlisted status renders no glyph. The theme's Roboto subsets carry no symbol glyphs, so these rules name symbol-capable system fonts explicitly (`DejaVu Sans`, `Segoe UI Symbol`, `Apple Symbols`, Noto Sans Symbols) to avoid a fallback that renders tofu. The glyph renders at 24px — the largest size whose ink matches the 16px title without growing the title's line box.
 * Collapsible sidebar TOC with an expand/collapse button (`src/js/10-toc-collapse.js`).
 * "Copy versioned URL" button in the page toolbar; copies the canonical URL plus the current hash to the clipboard (hidden on CI).
 * External links in the article open in a new tab.
