@@ -702,59 +702,54 @@
   font-weight: var(--body-font-weight-bold);
 }
 
-/* Item status badges. The Antora Tracer extension emits `tracer-status-<value>`
+/* Item status glyphs. The Antora Tracer extension emits `tracer-status-<value>`
    on an item block for its authored `status`, with each run of non-alphanumeric
    characters collapsed to `-`. The class is inert until styled here; the rules
    are deliberately opt-in per status value, so an unlisted status renders with
-   no badge. The `tracer-status-` namespace keeps these clear of the matrix's
+   no glyph. The `tracer-status-` namespace keeps these clear of the matrix's
    own `status-done` / `status-partial` / `status-missing` coverage classes,
-   which are styled inside the generated matrix attachment, not by this theme. */
+   which are styled inside the generated matrix attachment, not by this theme.
+
+   The theme's Roboto subsets carry no symbol glyphs, so `font-family` lists
+   symbol-capable system fonts explicitly; without them the browser may pick a
+   fallback whose symbols are missing and render tofu instead. */
 .doc .openblock.tracer-status-draft > .title::after,
 .doc .openblock.tracer-status-review > .title::after,
 .doc .openblock.tracer-status-approved > .title::after,
 .doc .openblock.tracer-status-deprecated > .title::after,
 .doc .openblock.tracer-status-superseded > .title::after {
-  border-radius: 3px;
-  font-size: calc(11 / var(--rem-base) * 1rem);
+  font-family: "DejaVu Sans", "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", "Noto Sans Symbols", sans-serif;
+  font-size: calc(14 / var(--rem-base) * 1rem);
   font-style: normal;
-  font-weight: var(--body-font-weight-bold);
-  letter-spacing: 0.04em;
-  margin-left: 0.5rem;
-  padding: 0.1rem 0.4rem;
-  text-transform: uppercase;
-  vertical-align: 0.15em;
+  font-weight: normal;
+  line-height: 1;
+  margin-left: 0.4rem;
+  vertical-align: -0.05em;
 }
 
 .doc .openblock.tracer-status-draft > .title::after {
-  background-color: var(--example-background);
-  border: 1px solid var(--example-border-color);
   color: var(--doc-font-color);
-  content: "draft";
+  content: "\270E";
 }
 
 .doc .openblock.tracer-status-review > .title::after {
-  background-color: var(--warning-color);
-  color: var(--warning-on-color);
-  content: "review";
+  color: var(--warning-color);
+  content: "\21BB";
 }
 
 .doc .openblock.tracer-status-approved > .title::after {
-  background-color: var(--tip-color);
-  color: var(--tip-on-color);
-  content: "approved";
+  color: var(--tip-color);
+  content: "\2713";
 }
 
 .doc .openblock.tracer-status-deprecated > .title::after {
-  background-color: var(--caution-color);
-  color: var(--caution-on-color);
-  content: "deprecated";
+  color: var(--caution-color);
+  content: "\26A0";
 }
 
 .doc .openblock.tracer-status-superseded > .title::after {
-  background-color: var(--example-background);
-  border: 1px solid var(--example-border-color);
-  color: var(--doc-font-color);
-  content: "superseded";
+  color: var(--toolbar-muted-color);
+  content: "\2298";
 }
 
 .doc table.tableblock caption {
