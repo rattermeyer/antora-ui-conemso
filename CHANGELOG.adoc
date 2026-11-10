@@ -6,6 +6,7 @@ Upstream releases are tagged `v1.0.0` through `v1.1.3`; the fork point is upstre
 == Unreleased (2026-08-30)
 
 === Added
+* Status badges on traceable item titles. An item whose `status` attribute is `draft`, `review`, `approved`, `deprecated`, or `superseded` gets a small label after its title, driven by the `tracer-status-<value>` class the Antora Tracer extension emits. An unlisted status renders no badge, and the neutral badges follow the dark theme.
 * Collapsible sidebar TOC with an expand/collapse button (`src/js/10-toc-collapse.js`).
 * "Copy versioned URL" button in the page toolbar; copies the canonical URL plus the current hash to the clipboard (hidden on CI).
 * External links in the article open in a new tab.
